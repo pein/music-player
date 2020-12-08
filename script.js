@@ -54,3 +54,15 @@ function pauseSong() {
 playBtn.addEventListener("click", () => {
   isPlaying ? pauseSong() : playSong();
 });
+
+// Update DOM
+function loadSong(song) {
+  title.textContent = song.displayName;
+  artist.textContent = song.artist;
+  audioElement.src = `music/${song.name}.mp3`;
+  image.src = `img/${song.name}.jpg`;
+}
+
+// On Load Load First Song
+
+loadSong(songs[2]);
